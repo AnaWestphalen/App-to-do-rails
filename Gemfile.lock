@@ -62,6 +62,9 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -195,6 +198,8 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     spring (4.1.1)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -235,6 +240,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotate
   bootsnap (>= 1.4.4)
   byebug
   capybara
@@ -247,6 +253,7 @@ DEPENDENCIES
   rails (~> 6.1.7, >= 6.1.7.2)
   rspec-rails (~> 5.0.0)
   sass-rails (>= 6)
+  shoulda-matchers (~> 5.0)
   spring
   spring-commands-rspec
   sqlite3 (~> 1.4)
