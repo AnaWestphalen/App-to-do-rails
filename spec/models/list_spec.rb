@@ -3,18 +3,24 @@
 require 'rails_helper'
 
 RSpec.describe List, type: :model do
+  context 'associations' do
+    it { is_expected.to have_many(:tasks) }
+  end
+
   context 'validates' do
-    let(:list_a) { create(:list) }
+    it { is_expected.to validate_presence_of(:name) }
+  end
 
-    it 'when the name is present the list is valid' do
-      expect(list_a).to be_valid
+  context 'when task is present' do
+    let(:list) { create(:list) }
+    let(:task) { create(:task) }
+
+    it 'and is valid, the list will also be valid' do
+      expect(list).to be_valid
     end
+  end
 
-    let(:list_b) { build(:list, name: nil) }
-
-    it 'when the name is not present the list is invalid' do
-      list_b.valid?
-      expect(list_b.errors[:name]).to include("can't be blank")
-    end
+  context 'when task is present but not is valid, the list is invalid' do
+    it { is_expected.not_to be_valid(:list) }
   end
 end

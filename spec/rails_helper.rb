@@ -31,6 +31,13 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  # Should matchers
+  Shoulda::Matchers.configure do |conf|
+    conf.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
 
   # FactoryBot
   config.include FactoryBot::Syntax::Methods

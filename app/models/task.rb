@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  description :text             not null
+#  completed   :boolean          default(FALSE), not null
+#  list_id     :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+class Task < ApplicationRecord
+  belongs_to :list
+
+  validates :title, :description, :completed, :list_id, presence: true
+end
