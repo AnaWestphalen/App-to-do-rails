@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class List < ApplicationRecord
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 
   validates :name, presence: true
   validates_associated :tasks
