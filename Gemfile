@@ -37,6 +37,7 @@ group :development, :test do
   gem 'faker'
   gem 'annotate'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do
