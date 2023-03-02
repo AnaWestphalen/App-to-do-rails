@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ListsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_list, only: %i[show edit update destroy]
 
   def index
@@ -19,7 +20,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-
+    @list.user = current_user
     if @list.save
       redirect_to @list, notice: 'Lista foi criada com sucesso.'
     else
@@ -28,6 +29,7 @@ class ListsController < ApplicationController
   end
 
   def update
+    @list.user = current_user
     if @list.update(list_params)
       redirect_to list_path(@list), notice: 'Lista foi editada com sucesso.'
     else
@@ -36,8 +38,9 @@ class ListsController < ApplicationController
   end
 
   def destroy
+    @list.user = current_user
     @list.destroy
-    redirect_to lists_path, notice: 'Lista foi destruída com sucesso.'
+    redirect_to lists_path, notice: 'Lista foi deletada com sucesso.'
   end
 
   private

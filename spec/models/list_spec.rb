@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe List, type: :model do
   context 'associations' do
+    it { is_expected.to belong_to(:user) }
     it { is_expected.to have_many(:tasks) }
   end
 
@@ -12,6 +13,7 @@ RSpec.describe List, type: :model do
   end
 
   context 'when task is present' do
+    let(:user) { create(:user) }
     let(:list) { create(:list) }
     let(:task) { create(:task) }
 
