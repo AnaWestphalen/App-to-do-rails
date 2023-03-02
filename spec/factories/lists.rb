@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :list do
-    name { Faker::Lorem.words }
+    name { Faker::Lorem.sentence(word_count: 3) }
+    association :user, factory: :user
   end
 end
