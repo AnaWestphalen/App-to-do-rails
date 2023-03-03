@@ -5,28 +5,29 @@ class ListsController < ApplicationController
   before_action :set_list, only: %i[show edit update destroy]
 
   def index
+    @user = User.find(params[:user_id])
     @lists = List.all
   end
 
   def show
-    # @task = Task.new
+    @task = Task.new
   end
 
   def new
     @list = List.new
   end
 
-  def edit; end
-
   def create
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save
-      redirect_to @list, notice: 'Lista foi criada com sucesso.'
+      redirect_to list_path(@list), notice: 'Lista foi criada com sucesso.'
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit; end
 
   def update
     @list.user = current_user
