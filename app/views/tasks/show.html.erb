@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @task.title %>
+
+  <strong>Descrição da tarefa:</strong>
+  <%= @task.description %>
+
+  <strong>Tarefa finalizada?</strong>
+  <%= @task.completed %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+
+<div class="form-actions">
+  <%= link_to 'Voltar', list_path(@list), class: "btn btn-outline-secondary mt-3" %>
+</div>

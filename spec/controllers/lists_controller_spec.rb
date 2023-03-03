@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe ListsController, :type => :controller do
+RSpec.describe ListsController, type: :controller do
   describe 'controller actions' do
     context '#routes' do
       it 'get/index' do
@@ -44,7 +44,7 @@ RSpec.describe ListsController, :type => :controller do
     context '#index' do
       it 'when responds successfully' do
         sign_in user
-        get :index
+        get :index, params: { user_id: user.id }
         expect(response).to be_successful
       end
 
@@ -71,7 +71,7 @@ RSpec.describe ListsController, :type => :controller do
         }.to change(List, :count).by(1)
       end
 
-      it 'when a list is created with valid attributes' do
+      it 'when a list is created with invalid attributes' do
         sign_in user
         expect{
           post :create, params: { list: invalid_list }
