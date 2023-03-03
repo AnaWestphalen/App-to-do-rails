@@ -1,0 +1,33 @@
+'pt-BR':
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      list:
+        one: Lista
+        other: Listas
+      task:
+        one: Tarefa
+        other: Tarefas
+    attributes:
+      user:
+        id: Código
+        email: Email
+        password: Senha
+        created_at: Criado em
+        updated_at: Atualizado em
+      list:
+        id: Código
+        name: Nome
+        created_at: Criado em
+        updated_at: Atualizado em
+        user_id: Código do usuário
+      task:
+        id: Código
+        title: Título da tarefa
+        description: Descrição
+        completed: Completou
+        list_id: Código da lista
+        created_at: Criado em
+        updated_at: Atualizado em
