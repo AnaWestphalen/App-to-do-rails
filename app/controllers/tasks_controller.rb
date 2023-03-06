@@ -17,6 +17,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.list = @list
+    @task.user = current_user
 
     if @task.save
       redirect_to list_path(@list), notice: 'Sua nova tarefa foi criada com sucesso.'

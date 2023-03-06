@@ -50,73 +50,70 @@ RSpec.describe TasksController, type: :controller do
       end
     end
 
-    # context '#show' do
-    #   it 'when render a show template' do
-    #     sign_in user
+    context '#show' do
+      it 'when render a show template' do
+        sign_in user
 
-    #     get :show, params: { list_id: list.id, id: task.id }
-    #     expect(response).to render_template(:show)
-    #   end
-    # end
+        get :show, params: { list_id: list.id, id: task.id }
+        expect(response).to render_template(:show)
+      end
+    end
 
-    # context '#create' do
-    #   it 'when a task is created with valid attributes' do
-    #     sign_in user
-    #     expect{
-    #       post :create, params: { list_id: list.id, id: task.id, task: task_params }
-    #     }.to change(List, :count).by(1)
-    #   end
+    context '#create' do
+      it 'when a task is created with valid attributes' do
+        sign_in user
+        expect{
+          post :create, params: { list_id: list.id, task: task_params }
+        }.to change(Task, :count).by(1)
+      end
 
-    #   it 'when a task is created with invalid attributes' do
-    #     sign_in user
-    #     expect{
-    #       post :create, params: { list_id: list.id, id: task.id, task: invalid_task }
-    #     }.not_to change(List, :count)
-    #   end
+      it 'when a task is created with invalid attributes' do
+        sign_in user
+        expect{
+          post :create, params: { list_id: list.id, task: invalid_task }
+        }.not_to change(Task, :count)
+      end
 
-    #   it 'when a new task is created and a flash notice is sent' do
-    #     sign_in user
-    #     post :create, params: { list_id: list.id, id: task.id, task: task_params }
+      it 'when a new task is created and a flash notice is sent' do
+        sign_in user
+        post :create, params: { list_id: list.id, task: task_params }
+        expect(flash[:notice]).to match(/criada com sucesso/)
+      end
+    end
 
-    #     expect(flash[:notice]).to match(/criada com sucesso/)
-    #   end
-    # end
+    context '#update' do
+      it 'when a task is updated with valid attributes' do
+        sign_in user
+        put :update, params: { list_id: list.id, id: task.id, task: task_params }
+        expect(response).to be_redirect
+      end
 
-    # context '#update' do
-    #   it 'when a task is updated with valid attributes' do
-    #     sign_in user
+      it 'when a task is updated with invalid attributes' do
+        sign_in user
+        put :update, params: { list_id: list.id, id: task.id, task: invalid_task }
+        expect(response).not_to be_redirect
+      end
 
-    #     put :update, params: { list_id: list.id, id: task.id, task: task_params }
-    #     expect(response).to be_redirect
-    #   end
+      it 'when a list is updated and a flash notice is sent' do
+        sign_in user
+        put :update, params: { list_id: list.id, id: task.id, task: task_params }
+        expect(flash[:notice]).to match(/atualizada com sucesso/)
+      end
+    end
 
-    #   it 'when a task is updated with invalid attributes' do
-    #     sign_in user
-    #     put :update, params: { list_id: list.id, id: task.id, task: invalid_task }
-    #     expect(response).not_to be_redirect
-    #   end
+    context '#destroy' do
+      it 'when a task is destroyed' do
+        sign_in user
+        delete :destroy, params: { list_id: list.id, id: task.id }
+        expect(response).to be_redirect
+      end
 
-    #   it 'when a list is updated and a flash notice is sent' do
-    #     sign_in user
-    #     put :update, params: { list_id: list.id, id: task.id, task: task_params }
+      it 'when a task is destroyed and a flash notice is sent' do
+        sign_in user
+        delete :destroy, params: { list_id: list.id, id: task.id }
 
-    #     expect(flash[:notice]).to match(/editada com sucesso/)
-    #   end
-    # end
-
-    # context '#destroy' do
-    #   it 'when a list is destroyed' do
-    #     sign_in user
-    #     delete :destroy, params: { list_id: list.id, id: task.id }
-    #     expect(response).to be_redirect
-    #   end
-
-    #   it 'when a list is destroyed and a flash notice is sent' do
-    #     sign_in user
-    #     delete :destroy, params: { list_id: list.id, id: task.id }
-
-    #     expect(flash[:notice]).to match(/deletada com sucesso/)
-    #   end
-    # end
+        expect(flash[:notice]).to match(/deletada com sucesso/)
+      end
+    end
   end
 end

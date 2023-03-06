@@ -5,7 +5,6 @@ class ListsController < ApplicationController
   before_action :set_list, only: %i[show edit update destroy]
 
   def index
-    @user = User.find(params[:user_id])
     @lists = List.all
   end
 

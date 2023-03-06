@@ -4,7 +4,8 @@ FactoryBot.define do
   factory :task do
     title { Faker::Hipster.word }
     description { Faker::Hipster.sentence }
-    completed { Faker::Boolean.boolean }
+    completed { true }
     association :list, factory: :list
+    association :user, factory: :user
   end
 end
