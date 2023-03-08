@@ -1,0 +1,91 @@
+.box-bottons {
+  margin-bottom: 15px;
+}
+
+.btn {
+  color: rgb(5, 5, 5);
+  padding: 5px 24px;
+  border-radius: 30px;
+  font-weight: lighter;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(5, 5, 5);
+  }
+}
+
+.botton-home {
+  border: 2px solid #757bc8;
+  background-color: #757bc8;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-back {
+  border: 2px solid #c77dff;
+  background-color: #c77dff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-lists {
+  border: 2px solid #7b2cbf;
+  background-color: #7b2cbf;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-logout {
+  border: 2px solid #9d4edd;
+  background-color: #9d4edd;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-login {
+  border: 2px solid #9d4edd;
+  background-color: #9d4edd;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-search {
+  border: 2px solid #c77dff;
+  background-color: #c77dff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-warning {
+  border: 2px solid #ff9e00;
+  background-color: #ff9e00;
+  color: rgb(5, 5, 5);
+  padding: 5px 24px;
+  border-radius: 30px;
+  font-weight: lighter;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(5, 5, 5);
+  }
+}
+
+.button-add-friends {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 25px;
+  left: 40%;
+
+  .btn-outline-dark {
+    background-color: #757bc8;
+    border-color: #757bc8;
+    color: #fff;
+  }
+}
+
+.button-index-survey {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  .btn-outline-dark {
+    background-color: #757bc8;
+    border-color: #757bc8;
+    color: #fff;
+  }
+}

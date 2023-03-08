@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AppToDoRails</title>
+    <title>TODO App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="<%= "bg-banner" unless current_page?(root_path)%>">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <div class="pb-5 mb-5">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

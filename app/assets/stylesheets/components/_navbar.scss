@@ -1,0 +1,45 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  height: 80px;
+  background: rgb(224, 179, 222);
+  display: flex;
+  vertical-align: middle;
+}
+
+.nav-nav {
+  display: flex;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.nav-item-brand {
+  display: flex;
+  margin-left: 30px;
+  margin-top: -10px;
+}
+
+.botons-nav {
+  display: flex;
+}
+
+.nav-btn-enter {
+  margin-left: 1200px;
+}
+
+.nav-item-home {
+  margin-left: 100px;
+}
+
+.nav-item-list {
+  margin-left: 150px;
+}
+
+.nav-item-logout {
+  margin-left: 700px;
+}
