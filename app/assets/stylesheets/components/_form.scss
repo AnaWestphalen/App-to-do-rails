@@ -1,0 +1,19 @@
+.bg-banner {
+  background: linear-gradient(140deg, #B9B5B5, #c912c0);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.corpo {
+  align-items: center;
+  margin-top: 35px;
+  max-width: 700px;
+  width: 100%;
+  background: linear-gradient(140deg, #B9B5B5, #524235);
+  border-radius: 10px;
+  opacity: 0.9;
+}
