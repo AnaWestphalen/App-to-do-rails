@@ -1,5 +1,18 @@
-<h1>Nova Lista</h1>
+<div class="back-index">
+  <%= link_to 'Voltar', lists_path, class: "btn botton-back"%>
+</div>
 
-<%= render 'form', list: @list %>
-
-<%= link_to 'Voltar para minhas listas', lists_path %>
+<div class="lists-banner m-0" >
+  <div class="row m-0">
+    <div class="col-12">
+      <h2 class="title-index mt-5 pb-3">Nova lista</h2>
+        <div >
+          <div class="row justify-content-around mb-5 ">
+            <div class="new-list">
+              <%= render 'form', list: @list %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
