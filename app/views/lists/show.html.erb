@@ -1,32 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<h2>
-  <strong>Nome:</strong>
-  <%= @list.name %>
-</h2>
+<div class="back-index">
+  <%= link_to 'Voltar', lists_path, class: "btn botton-back"%>
+</div>
 
-<h3>Tarefas</h3>
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
-      <% @list.tasks.each do |task| %>
-        <tr>
-          <td><%= task.title %></td>
-          <td><%= task.description %></td>
-          <td><%= task.completed %></td>
-        </tr>
-      <% end %>
-    </div>
+<div class="name-list row m-0">
+  <div class="col-12">
+    <h2><%= @list.name %></h2>
   </div>
 </div>
 
-<h3>Crie uma nova tarefa!!!</h3>
+<div class="task-index m-0">
+  <% @list.tasks.each do |task| %>
+    <div class="task m-3 radius-5" style="width: 13rem;">
+      <div class="flat-task">
+        <div class="task-body">
+          <h5 class="task-title"><strong>Tarefa: </strong><%= task.title %></h5>
+          <p class="task-description"><strong>Descrição: </strong><%= task.description %></p>
+          <p class="task-completed"><strong>Terminou? </strong><%= task.completed ? "Sim" : "Não" %></p>
+          <div class="organize-bottons">
+            <%= link_to '+ info', @list_task_path, class: "btn botton-edit" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<%= simple_form_for [@list, @task] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :completed %>
-  <%= f.submit 'Criar a Tarefa' %>
-<% end %>
+<div class="name-list row m-0">
+  <div class="col-12">
+    <h4>Crie uma nova tarefa</h4>
+  </div>
+</div>
 
-<%= link_to 'Voltar', lists_path%>
+<div class="container-form">
+  <div class="task-new">
+    <%= simple_form_for [@list, @task] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :completed %>
+  </div>
+    <div class="create-task">
+      <%= f.submit 'Criar a Tarefa' %>
+    </div>
+    <% end %>
+</div>
+
+<br>

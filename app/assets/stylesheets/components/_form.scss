@@ -17,3 +17,35 @@
   border-radius: 10px;
   opacity: 0.9;
 }
+
+.container-form {
+  background-color: #a29e9a;
+  border-radius: 5px;
+  width: 800px;
+  height: 60px;
+  margin-left: 250px;
+}
+
+.simple_form {
+  display: flex;
+  justify-content:space-around;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+.create-task {
+  margin-top: 10px;
+  margin-left: 350px;
+}
+
+.field {
+  background-color: #a29e9a;
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+  margin-left: -45px;
+}

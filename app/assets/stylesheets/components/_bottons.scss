@@ -32,6 +32,36 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.botton-show {
+  border: 1px solid #4d048d;
+  background-color: #4d048d;
+  width: 36px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+}
+
+.botton-edit {
+  border: 1px solid #ee4d9d;
+  background-color: #ee4d9d;
+  width: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+}
+
+.botton-delete {
+  border: 1px solid #eb2a5a;
+  background-color: #eb2a5a;
+  width: 46px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+}
+
+.botton-new {
+  border: 1px solid #eb2a5a;
+  background-color: #eb2a5a;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .botton-logout {
   border: 2px solid #9d4edd;
   background-color: #9d4edd;
@@ -41,6 +71,12 @@
 .botton-login {
   border: 2px solid #9d4edd;
   background-color: #9d4edd;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botton-back {
+  border: 2px solid #ee4d9d;
+  background-color: #ee4d9d;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -61,31 +97,5 @@
   &:hover {
     text-decoration: none;
     color: rgb(5, 5, 5);
-  }
-}
-
-.button-add-friends {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 25px;
-  left: 40%;
-
-  .btn-outline-dark {
-    background-color: #757bc8;
-    border-color: #757bc8;
-    color: #fff;
-  }
-}
-
-.button-index-survey {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-
-  .btn-outline-dark {
-    background-color: #757bc8;
-    border-color: #757bc8;
-    color: #fff;
   }
 }

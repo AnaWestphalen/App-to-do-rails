@@ -1,27 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Essas são suas listas de tarefas</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="lists-banner m-0" >
+  <div class="row m-0">
+    <div class="col-12">
+      <h2 class="title-index mt-5 pb-3">Estas são suas listas de tarefas</h2>
+      <div class="row justify-content-around mb-5 ">
+        <div class="new-list">
+          <%= link_to 'Crie uma nova lista aqui', new_list_path, class: "btn botton-new" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list-index m-0">
     <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.name %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="list m-3 radius-5" style="width: 13rem;">
+        <div class="flat-list">
+          <div class="list-body">
+            <h5 class="list-name"><%= list.name %></h5>
+          </div>
+          <div >
+            <div class="list-bottons">
+              <div class="space-bottons">
+                <%= link_to 'Exibir', list, class: "btn botton-show" %>
+              </div>
+              <div class="space-bottons">
+                <%= link_to 'Editar', edit_list_path(list), class: "btn botton-edit" %>
+              </div>
+              <div class="space-bottons">
+                <%= link_to 'Deletar', list, class: "btn botton-delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <br>
-
-<%= link_to 'New list', new_list_path %>
