@@ -48,6 +48,15 @@
   font-size: 14px;
 }
 
+.edit-task {
+  border: 1px solid #ee4d9d;
+  background-color: #ee4d9d;
+  width: 100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
 .botton-delete {
   border: 1px solid #eb2a5a;
   background-color: #eb2a5a;
@@ -78,6 +87,17 @@
   border: 2px solid #ee4d9d;
   background-color: #ee4d9d;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-adjuste {
+  margin-left: 37px;
+  margin-bottom: 20px;
+}
+
+.btn-del {
+  margin-left: 60px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .botton-search {
