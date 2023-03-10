@@ -1,1 +1,19 @@
+<div class="back-index">
+  <%= link_to 'Voltar', lists_path, class: "btn botton-back"%>
+</div>
 
+<div class="name-list row m-0">
+  <div class="col-12">
+    <h4>Crie uma nova tarefa</h4>
+  </div>
+</div>
+
+<div class="container-form">
+  <div class="task-new">
+    <%= simple_form_for [@list, @task] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :completed %>
+      <%= f.submit 'Criar a Tarefa' %>
+    <% end %>
+</div>

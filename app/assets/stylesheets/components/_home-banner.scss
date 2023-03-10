@@ -26,3 +26,15 @@
 #button_string {
   color: white;
 }
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+  border-radius: 5px;
+  height: 60px;
+  margin-left: 170px;
+}

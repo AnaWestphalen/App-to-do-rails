@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  before_action :set_list_params, only: %i[new create update]
+  before_action :set_list_params, only: %i[new create edit update destroy]
   before_action :set_task, only: %i[show edit update destroy]
 
   def index
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to list_tasks_path, notice: 'Sua tarefa foi deletada com sucesso.'
+    redirect_to lists_path, notice: 'Sua tarefa foi deletada com sucesso.'
   end
 
   private

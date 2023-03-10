@@ -18,8 +18,8 @@
           <h5 class="task-title"><strong>Tarefa: </strong><%= task.title %></h5>
           <p class="task-description"><strong>Descrição: </strong><%= task.description %></p>
           <p class="task-completed"><strong>Terminou? </strong><%= task.completed ? "Sim" : "Não" %></p>
-          <div class="organize-bottons">
-            <%= link_to '+ info', @list_task_path, class: "btn botton-edit" %>
+          <div class="btn-adjuste">
+            <%= link_to 'Editar a tarefa', edit_list_task_path(@list), class: "btn botton-edit" %>
           </div>
         </div>
       </div>
@@ -27,23 +27,10 @@
   <% end %>
 </div>
 
-<div class="name-list row m-0">
-  <div class="col-12">
-    <h4>Crie uma nova tarefa</h4>
+<div class="row justify-content-around mb-5 ">
+  <div class="new-task">
+    <%= link_to 'Crie uma nova tarefa aqui', new_list_task_path(@list), class: "btn botton-new" %>
   </div>
-</div>
-
-<div class="container-form">
-  <div class="task-new">
-    <%= simple_form_for [@list, @task] do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :completed %>
-  </div>
-    <div class="create-task">
-      <%= f.submit 'Criar a Tarefa' %>
-    </div>
-    <% end %>
 </div>
 
 <br>

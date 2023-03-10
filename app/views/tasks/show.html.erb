@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Título:</strong>
-  <%= @task.title %>
+<div class="back-index">
+  <%= link_to 'Voltar', lists_path, class: "btn botton-back"%>
+</div>
 
-  <strong>Descrição da tarefa:</strong>
-  <%= @task.description %>
-
-  <strong>Tarefa finalizada?</strong>
-  <%= @task.completed %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-
-<div class="form-actions">
-  <%= link_to 'Voltar', list_path(@list), class: "btn btn-outline-secondary mt-3" %>
+<div class="task-index m-0">
+  <div class="task m-3 radius-5" style="width: 13rem;">
+    <div class="flat-task">
+      <div class="task-body">
+        <h5 class="task-title"><strong>Tarefa: </strong><%= @task.title %></h5>
+        <p class="task-description"><strong>Descrição: </strong><%= @task.description %></p>
+        <p class="task-completed"><strong>Terminou? </strong><%= @task.completed ? "Sim" : "Não" %></p>
+        <div class="btn-del">
+          <%= link_to 'Deletar', list_task_path, class: "btn botton-delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
